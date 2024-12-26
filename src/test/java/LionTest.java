@@ -27,9 +27,9 @@ public class LionTest {
 
     @Test
     public void testGetKittens() {
-        when(felineLionMock.getKittens()).thenReturn(2);
+        when(felineLionMock.getKittens()).thenReturn(1);
         int kittens = lion.getKittens();
-        assertEquals(2, kittens);
+        assertEquals(1, kittens);
     }
 
     @Test
@@ -46,8 +46,8 @@ public class LionTest {
 
     @Test
     public void testFemaleLionDoesNotHaveMane() throws Exception {
-        lion = new Lion("Самка", felineLionMock); // Изменяем на самку
-        assertTrue(!lion.doesHaveMane());
+        lion = new Lion("Самка", felineLionMock);
+        assertFalse(lion.doesHaveMane());
     }
 
     @Test

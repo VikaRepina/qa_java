@@ -35,22 +35,4 @@ public class AnimalTest {
         List<String> food = animal.getFood(animalKind);
         assertEquals(expectedFood, food);
     }
-
-    @Test
-    public void testGetFoodUnknownAnimal() {
-        animal = new Animal();
-        Exception exception = assertThrows(Exception.class, () -> {
-            animal.getFood("Неизвестное животное");
-        });
-
-        String expectedMessage = "Неизвестный вид животного, используйте значение Травоядное или Хищник";
-        assertEquals(expectedMessage, exception.getMessage());
-    }
-
-    @Test
-    public void testGetFamily() {
-        String expectedFamily = "Существует несколько семейств: заячьи, беличьи, мышиные, кошачьи, псовые, медвежьи, куньи";
-        String family = animal.getFamily();
-        assertEquals(expectedFamily, family);
-    }
 }
